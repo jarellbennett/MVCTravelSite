@@ -9,37 +9,21 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PubDate)
-        </th>
-        <th></th>
-    </tr>
+@* thumbnail views for each individal review with button to access detail page *@
+@foreach (var item in Model)  
+{
+<div class="row" id="ithumbs">
+    <div class="col-sm-6 col-md-8">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                <p>@Html.DisplayFor(modelItem => item.Content)<br />@Html.DisplayFor(modelItem => item.PubDate)</p>
+                <p>@Html.ActionLink("Details", "Details", new { id = item.ID })</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Content)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PubDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+
 }
-
-</table>

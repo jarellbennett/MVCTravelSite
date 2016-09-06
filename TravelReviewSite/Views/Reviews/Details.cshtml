@@ -6,37 +6,18 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Review</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Content)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Content)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PubDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PubDate)
-        </dd>
-
-    </dl>
+@* Basic thumbnail that showcases the details of the specific review *@
+<div class="row">
+    <div class="col-xs-6 col-md-8" id="dethumbs">
+        <a href="#" class="thumbnail"></a>
+           <h3>@Html.DisplayFor(modelItem => Model.Title)</h3>
+        <h5>@Html.DisplayFor(model => model.Category)</h5>
+            <p>@Html.DisplayFor(model => model.Content)<br />@Html.DisplayFor(model => model.PubDate)</p>
+        <p2>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p2>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

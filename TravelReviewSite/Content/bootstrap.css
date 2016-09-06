@@ -315,7 +315,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
-  background-color: #ffffff;
+  background-color: darkgray;
 }
 
 input,
@@ -4501,7 +4501,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: teal;
   border-color: #080808;
 }
 
@@ -6812,5 +6812,13 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important;
+  }
+
+  #ithumbs{
+      background-color:green;
+      border:4px thin yellow;
+  }
+  #dethumbs{
+      background-color:aqua;
   }
 }
